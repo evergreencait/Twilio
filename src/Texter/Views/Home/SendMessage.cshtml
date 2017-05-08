@@ -10,8 +10,8 @@
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.To)
-    @Html.TextBoxFor(model => model.To)
-    @Html.LabelFor(model => model.From)
+    @Html.TextBoxFor(model => model.To, new { @Value = "+12064653611" })
+    @Html.LabelFor(model => model.From, new { @Value = "+12065391227" })
     @Html.TextBoxFor(model => model.From)
     @Html.LabelFor(model => model.Body)
     @Html.TextBoxFor(model => model.Body)
