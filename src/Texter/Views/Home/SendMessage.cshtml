@@ -1,21 +1,15 @@
-﻿@{
-    ViewBag.Title = "TEXTER";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-@model Texter.ViewModels.SendMessageViewModel
+﻿@model Texter.Models.Message
 
 <h2>Send a new message</h2>
 <hr />
-@using (Html.BeginForm("SendMessage", "Home", FormMethod.Post, Model.Message))
+@using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Message.To)
-    @Html.TextBoxFor(model => model.Message.To)
-    @Html.LabelFor(model => model.Message.From)
-    @Html.DropDownListFor(model => model.Message.From, new SelectList(
-        Model.Contacts, "FirstName", "PhoneNumber"))
-    @Html.LabelFor(model => model.Message.Body)
-    @Html.TextBoxFor(model => model.Message.Body)
+    @Html.LabelFor(model => model.To)
+    @Html.TextBoxFor(model => model.To)
+    @Html.LabelFor(model => model.From)
+    @Html.TextBoxFor(model => model.From)
+    @Html.LabelFor(model => model.Body)
+    @Html.TextBoxFor(model => model.Body)
     <input type="submit" value="Send!" />
 }
 

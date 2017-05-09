@@ -9,6 +9,6 @@ namespace Texter.ViewModels
     public class SendMessageViewModel
     {
         public List<Contact> Contacts { get; set; }
-        public Message Message { get; set; } 
+        public Message Message { get; set; }
     }
 }
