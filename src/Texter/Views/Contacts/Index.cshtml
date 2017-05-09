@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Texter.Models.Contact>
+
+@{
+    ViewBag.Title = "TEXTER";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.Count() != 0)
+{
+    @foreach (var contact in Model)
+    {
+        <p>@contact.FirstName @contact.LastName @contact.PhoneNumber</p>
+    }
+    @Html.ActionLink("Make friends", "Create")
+}
+else
+{
+    <p>You have no friends</p>
+    @Html.ActionLink("Make friends", "Create")
+}

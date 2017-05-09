@@ -23,8 +23,8 @@ namespace Texter.Controllers
         public IActionResult SendMessage()
         {
             Message model = new Message();
-            model.To = "+12063217227";
-            model.From = "+12065391227";
+            model.To = "+12069543205";
+            model.From = "+12065391391";
             return View(model);
         }
 

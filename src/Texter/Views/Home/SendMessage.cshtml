@@ -3,18 +3,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@model Texter.Models.Message
+@model Texter.ViewModels.SendMessageViewModel
 
 <h2>Send a new message</h2>
 <hr />
-@using (Html.BeginForm())
+@using (Html.BeginForm("SendMessage", "Home", FormMethod.Post, Model.Message))
 {
-    @Html.LabelFor(model => model.To)
-    @Html.TextBoxFor(model => model.To, new { @Value = "+12064653611" })
-    @Html.LabelFor(model => model.From, new { @Value = "+12065391227" })
-    @Html.TextBoxFor(model => model.From)
-    @Html.LabelFor(model => model.Body)
-    @Html.TextBoxFor(model => model.Body)
+    @Html.LabelFor(model => model.Message.To)
+    @Html.TextBoxFor(model => model.Message.To)
+    @Html.LabelFor(model => model.Message.From)
+    @Html.DropDownListFor(model => model.Message.From, new SelectList(
+        Model.Contacts, "FirstName", "PhoneNumber"))
+    @Html.LabelFor(model => model.Message.Body)
+    @Html.TextBoxFor(model => model.Message.Body)
     <input type="submit" value="Send!" />
 }
 
